@@ -1,0 +1,15 @@
+#!/bin/sh
+
+DIRtoday="BFd"
+
+FILES=`ls|grep -v -E "app_run|by|go|kuww|na_ge_mod|bala_tar|prebuilt|cai_du|out"`
+
+rm -rf /run/shm/${DIRtoday} && mkdir /run/shm/${DIRtoday}
+for ff in $FILES
+do
+echo "backup $ff..."
+tar cfj /run/shm/${DIRtoday}/$ff.tar.bz2 $ff &
+done
+tar cfj /run/shm/${DIRtoday}/tools.tar.bz2 app_run by go kuww na_ge_mod bala_tar cai_du
+#tar cfj /run/shm/${DIRtoday}/_git.tar.bz2 .git .gitignore
+tar cfj /run/shm/${DIRtoday}/_git.tar.bz2 .git

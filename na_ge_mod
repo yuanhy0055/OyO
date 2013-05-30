@@ -1,0 +1,1 @@
+find . -name Android.mk -exec grep -Hn "$1" {} \; |grep -E "LOCAL_MODULE|LOCAL_PACKAGE_NAME"

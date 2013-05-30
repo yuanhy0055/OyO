@@ -1,0 +1,9 @@
+#!/bin/sh
+
+FILES=`ls`
+for ff in $FILES
+do
+#echo -en "$ff\t\t\t"
+du -sh $ff
+done
+
