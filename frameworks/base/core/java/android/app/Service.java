@@ -231,13 +231,13 @@ import java.io.PrintWriter;
  * <p>An example of this use of a Service is shown here.  First is the Service
  * itself, publishing a custom class when bound:
  * 
- * {@sample development/samples/ApiDemos/src/com/example/android/apis/app/LocalService.java
+ * {sample development/samples/ApiDemos/src/com/example/android/apis/app/LocalService.java
  *      service}
  * 
  * <p>With that done, one can now write client code that directly accesses the
  * running service, such as:
  * 
- * {@sample development/samples/ApiDemos/src/com/example/android/apis/app/LocalServiceActivities.java
+ * {sample development/samples/ApiDemos/src/com/example/android/apis/app/LocalServiceActivities.java
  *      bind}
  * 
  * <a name="RemoteMessengerServiceSample"></a>
@@ -253,14 +253,14 @@ import java.io.PrintWriter;
  * is shown here.  First is the Service itself, publishing a Messenger to
  * an internal Handler when bound:
  * 
- * {@sample development/samples/ApiDemos/src/com/example/android/apis/app/MessengerService.java
+ * {sample development/samples/ApiDemos/src/com/example/android/apis/app/MessengerService.java
  *      service}
  * 
  * <p>If we want to make this service run in a remote process (instead of the
  * standard one for its .apk), we can use <code>android:process</code> in its
  * manifest tag to specify one:
  * 
- * {@sample development/samples/ApiDemos/AndroidManifest.xml remote_service_declaration}
+ * {sample development/samples/ApiDemos/AndroidManifest.xml remote_service_declaration}
  * 
  * <p>Note that the name "remote" chosen here is arbitrary, and you can use
  * other names if you want additional processes.  The ':' prefix appends the
@@ -270,7 +270,7 @@ import java.io.PrintWriter;
  * to it.  Note that this allows clients to register with it to receive
  * messages back as well:
  * 
- * {@sample development/samples/ApiDemos/src/com/example/android/apis/app/MessengerServiceActivities.java
+ * {sample development/samples/ApiDemos/src/com/example/android/apis/app/MessengerServiceActivities.java
  *      bind}
  */
 public abstract class Service extends ContextWrapper implements ComponentCallbacks {
@@ -398,7 +398,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
      * callback in that case.  The <code>handleCommand</code> method is implemented by
      * you as appropriate:
      * 
-     * {@sample development/samples/ApiDemos/src/com/example/android/apis/app/ForegroundService.java
+     * {sample development/samples/ApiDemos/src/com/example/android/apis/app/ForegroundService.java
      *   start_compatibility}
      * 
      * @param intent The Intent supplied to {@link android.content.Context#startService}, 
@@ -580,7 +580,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
      * level 5, you can use the following model to call the the older {@link #setForeground}
      * or this modern method as appropriate:
      * 
-     * {@sample development/samples/ApiDemos/src/com/example/android/apis/app/ForegroundService.java
+     * {sample development/samples/ApiDemos/src/com/example/android/apis/app/ForegroundService.java
      *   foreground_compatibility}
      * 
      * @param id The identifier for this notification as per

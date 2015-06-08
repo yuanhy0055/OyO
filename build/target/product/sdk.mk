@@ -70,11 +70,9 @@ PRODUCT_LOCALES := \
 	hdpi \
 	mdpi \
 	en_US \
-	en_AU \
-	en_SG \
+	en_GB \
 	zh_CN \
-	zh_TW \
-	ko_KR
+	zh_TW
 
 # include available languages for TTS in the system image
 #nclude external/svox/pico/lang/PicoLangFrFrInSystem.mk

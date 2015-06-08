@@ -98,7 +98,7 @@ public class AppWidgetManager {
      * An intent extra that contains one appWidgetId.
      * <p>
      * The value will be an int that can be retrieved like this:
-     * {@sample frameworks/base/tests/appwidgets/AppWidgetHostTest/src/com/android/tests/appwidgethost/AppWidgetHostActivity.java getExtra_EXTRA_APPWIDGET_ID}
+     * {sample frameworks/base/tests/appwidgets/AppWidgetHostTest/src/com/android/tests/appwidgethost/AppWidgetHostActivity.java getExtra_EXTRA_APPWIDGET_ID}
      */
     public static final String EXTRA_APPWIDGET_ID = "appWidgetId";
 
@@ -106,7 +106,7 @@ public class AppWidgetManager {
      * An intent extra that contains multiple appWidgetIds.
      * <p>
      * The value will be an int array that can be retrieved like this:
-     * {@sample frameworks/base/tests/appwidgets/AppWidgetHostTest/src/com/android/tests/appwidgethost/TestAppWidgetProvider.java getExtra_EXTRA_APPWIDGET_IDS}
+     * {sample frameworks/base/tests/appwidgets/AppWidgetHostTest/src/com/android/tests/appwidgethost/TestAppWidgetProvider.java getExtra_EXTRA_APPWIDGET_IDS}
      */
     public static final String EXTRA_APPWIDGET_IDS = "appWidgetIds";
 

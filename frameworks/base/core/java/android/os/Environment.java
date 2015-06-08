@@ -80,7 +80,7 @@ public class Environment {
      * <p>Here is an example of typical code to monitor the state of
      * external storage:</p>
      * 
-     * {@sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
+     * {sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
      * monitor_storage}
      */
     public static File getExternalStorageDirectory() {
@@ -189,7 +189,7 @@ public class Environment {
      * <p>Here is an example of typical code to manipulate a picture on
      * the public external storage:</p>
      * 
-     * {@sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
+     * {sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
      * public_picture}
      * 
      * @param type The type of storage directory to return.  Should be one of

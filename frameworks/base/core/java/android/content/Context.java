@@ -435,7 +435,7 @@ public abstract class Context {
      * <p>Here is an example of typical code to manipulate a file in
      * an application's private storage:</p>
      * 
-     * {@sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
+     * {sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
      * private_file}
      *
      * <p>If you supply a non-null <var>type</var> to this function, the returned
@@ -458,7 +458,7 @@ public abstract class Context {
      * <p>Here is an example of typical code to manipulate a picture in
      * an application's private storage and add it to the media database:</p>
      * 
-     * {@sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
+     * {sample development/samples/ApiDemos/src/com/example/android/apis/content/ExternalStorage.java
      * private_picture}
      * 
      * @param type The type of files directory to return.  May be null for
