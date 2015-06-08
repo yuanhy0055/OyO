@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#mbclient //11.1.1.192/and8 -U "tcl" "'" <<__EOF__
+smbclient //11.1.1.111/v7a -U nico p <<__EOF__
+prompt
+mput ramdisk.img system.img
+!rm system.img
+!rm ramdisk.img
+quit
+__EOF__
