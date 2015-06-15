@@ -6,6 +6,27 @@ $(file) : $(LOCAL_PATH)/busybox | $(ACP)
 	$(transform-prebuilt-to-target)
 ALL_PREBUILT += $(file)
 
+TOOLS := \
+	cp \
+	vi \
+	du \
+	wget \
+	find \
+	openvt \
+	chvt \
+	tty
+
+SYMLINKS := $(addprefix $(TARGET_ROOT_OUT_SBIN)/,$(TOOLS))
+$(SYMLINKS): BBOX_BINARY := busybox
+$(SYMLINKS): $(LOCAL_INSTALLED_MODULE) $(LOCAL_PATH)/Android.mk
+	@echo "Symlink: $@ -> $(BBOX_BINARY)"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf $(BBOX_BINARY) $@
+ALL_DEFAULT_INSTALLED_MODULES += $(SYMLINKS)
+ALL_MODULES.busybox.INSTALLED := \
+	$(ALL_MODULES.busybox.INSTALLED) $(SYMLINKS)
+
 file := $(TARGET_ROOT_OUT_SBIN)/bash
 $(file) : $(LOCAL_PATH)/bash | $(ACP)
 	$(transform-prebuilt-to-target)

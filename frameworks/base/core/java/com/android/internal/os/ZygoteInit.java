@@ -607,7 +607,7 @@ Log.i("TGT", ANDROID_SOCKET_ENV+"="+env);
             if (argv.length != 2) {
                 throw new RuntimeException(argv[0] + USAGE_STRING);
             }
-Log.i("TGT", "Z("+argv[1]+")");
+Log.d("TTGG", "Z("+argv[1]+")");
             if (argv[1].equals("true")) {
                 startSystemServer();
             } else if (!argv[1].equals("false")) {
@@ -713,7 +713,7 @@ Log.i("TGT", "Z("+argv[1]+")");
             } catch (IOException ex) {
                 throw new RuntimeException("Error in select()", ex);
             }
-Log.i("TGT", "sele="+index);
+Log.i("TTGG", "sele="+index);
             if (index < 0) {
                 throw new RuntimeException("Error in select()");
             } else if (index == 0) {
