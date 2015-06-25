@@ -23,7 +23,7 @@
 #include "TetherController.h"
 #include "NatController.h"
 #include "PppController.h"
-#include "PanController.h"
+//#include "PanController.h"
 #include "SoftapController.h"
 #include "UsbController.h"
 
@@ -31,7 +31,7 @@ class CommandListener : public FrameworkListener {
     static TetherController *sTetherCtrl;
     static NatController *sNatCtrl;
     static PppController *sPppCtrl;
-    static PanController *sPanCtrl;
+    //static PanController *sPanCtrl;
     static SoftapController *sSoftapCtrl;
     static UsbController *sUsbCtrl;
 

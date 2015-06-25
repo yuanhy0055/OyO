@@ -45,7 +45,7 @@ extern "C" int ifc_down(const char *name);
 TetherController *CommandListener::sTetherCtrl = NULL;
 NatController *CommandListener::sNatCtrl = NULL;
 PppController *CommandListener::sPppCtrl = NULL;
-PanController *CommandListener::sPanCtrl = NULL;
+//PanController *CommandListener::sPanCtrl = NULL;
 SoftapController *CommandListener::sSoftapCtrl = NULL;
 UsbController *CommandListener::sUsbCtrl = NULL;
 
@@ -67,8 +67,8 @@ CommandListener::CommandListener() :
         sNatCtrl = new NatController();
     if (!sPppCtrl)
         sPppCtrl = new PppController();
-    if (!sPanCtrl)
-        sPanCtrl = new PanController();
+    //if (!sPanCtrl)
+    //    sPanCtrl = new PanController();
     if (!sSoftapCtrl)
         sSoftapCtrl = new SoftapController();
     if (!sUsbCtrl)
@@ -561,14 +561,14 @@ int CommandListener::PanCmd::runCommand(SocketClient *cli,
     }
 
     if (!strcmp(argv[1], "start")) {
-        rc = sPanCtrl->startPan();
+        //rc = sPanCtrl->startPan();
     } else if (!strcmp(argv[1], "stop")) {
-        rc = sPanCtrl->stopPan();
+        //rc = sPanCtrl->stopPan();
     } else if (!strcmp(argv[1], "status")) {
         char *tmp = NULL;
 
-        asprintf(&tmp, "Pan services %s",
-                 (sPanCtrl->isPanStarted() ? "started" : "stopped"));
+        asprintf(&tmp, "Pan services %s", "stopped");
+        //         (sPanCtrl->isPanStarted() ? "started" : "stopped"));
         cli->sendMsg(ResponseCode::PanStatusResult, tmp, false);
         free(tmp);
         return 0;

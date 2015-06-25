@@ -66,12 +66,7 @@ LOCAL_SRC_FILES := \
 	utils.c \
 	usb_vendors.c
 
-
-ifneq ($(USE_SYSDEPS_WIN32),)
-  LOCAL_SRC_FILES += sysdeps_win32.c
-else
   LOCAL_SRC_FILES += fdevent.c
-endif
 
 LOCAL_CFLAGS += -O2 -g -DADB_HOST=1  -Wall -Wno-unused-parameter
 LOCAL_CFLAGS += -D_XOPEN_SOURCE -D_GNU_SOURCE -DSH_HISTORY
@@ -86,28 +81,13 @@ include $(BUILD_HOST_EXECUTABLE)
 
 $(call dist-for-goals,droid,$(LOCAL_BUILT_MODULE))
 
-ifeq ($(HOST_OS),windows)
-$(LOCAL_INSTALLED_MODULE): \
-    $(HOST_OUT_EXECUTABLES)/AdbWinApi.dll \
-    $(HOST_OUT_EXECUTABLES)/AdbWinUsbApi.dll
-endif
 
 
 # adbd device daemon
 # =========================================================
 
 # build adbd in all non-simulator builds
-BUILD_ADBD := false
-ifneq ($(TARGET_SIMULATOR),true)
-    BUILD_ADBD := true
-endif
-
-# build adbd for the Linux simulator build
-# so we can use it to test the adb USB gadget driver on x86
-#ifeq ($(HOST_OS),linux)
-#    BUILD_ADBD := true
-#endif
-
+BUILD_ADBD := true
 
 ifeq ($(BUILD_ADBD),true)
 include $(CLEAR_VARS)
@@ -143,13 +123,7 @@ LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT_SBIN)
 LOCAL_UNSTRIPPED_PATH := $(TARGET_ROOT_OUT_SBIN_UNSTRIPPED)
 
-ifeq ($(TARGET_SIMULATOR),true)
-  LOCAL_STATIC_LIBRARIES := libcutils
-  LOCAL_LDLIBS += -lpthread
-  include $(BUILD_HOST_EXECUTABLE)
-else
   LOCAL_STATIC_LIBRARIES := libcutils libc
   include $(BUILD_EXECUTABLE)
-endif
 
 endif

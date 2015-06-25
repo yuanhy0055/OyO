@@ -19,7 +19,6 @@ LOCAL_SRC_FILES:=                                      \
                   TetherController.cpp                 \
                   NatController.cpp                    \
                   PppController.cpp                    \
-                  PanController.cpp                    \
                   SoftapController.cpp                 \
                   UsbController.cpp                    \
                   ThrottleController.cpp
@@ -27,8 +26,6 @@ LOCAL_SRC_FILES:=                                      \
 LOCAL_MODULE:= netd
 
 LOCAL_C_INCLUDES := $(KERNEL_HEADERS) \
-                    $(LOCAL_PATH)/../bluetooth/bluedroid/include \
-                    $(LOCAL_PATH)/../bluetooth/bluez-clean-headers \
                     external/openssl/include
 
 LOCAL_CFLAGS :=
@@ -40,11 +37,6 @@ LOCAL_CFLAGS += -DWIFI_DRIVER_FW_AP_PATH=\"$(WIFI_DRIVER_FW_AP_PATH)\"
 endif
 
 LOCAL_SHARED_LIBRARIES := libsysutils libcutils libnetutils libcrypto
-
-ifeq ($(BOARD_HAVE_BLUETOOTH),true)
-  LOCAL_SHARED_LIBRARIES := $(LOCAL_SHARED_LIBRARIES) libbluedroid
-  LOCAL_CFLAGS := $(LOCAL_CFLAGS) -DHAVE_BLUETOOTH
-endif
 
 include $(BUILD_EXECUTABLE)
 
