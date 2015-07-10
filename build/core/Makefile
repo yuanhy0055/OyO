@@ -1000,6 +1000,11 @@ $(INSTALLED_FILES_FILE): $(INSTALLED_SYSTEMIMAGE)
 	@mkdir -p $(dir $@)
 	@rm -f $@
 	$(hide) build/tools/fileslist.py $(TARGET_OUT) $(TARGET_OUT_DATA) > $@
+	@echo TTGG: last CMD!
+	chmod go+r $(INSTALLED_SYSTEMIMAGE) && mv $(INSTALLED_SYSTEMIMAGE) $(OUT_DIR)
+	mv $(INSTALLED_RAMDISK_TARGET) $(OUT_DIR)
+	@echo "TGG->: {$(PRODUCTS)} {$(INTERNAL_PRODUCT)} {$(PRODUCT_POLICY)}"
+
 
 .PHONY: installed-file-list
 installed-file-list: $(INSTALLED_FILES_FILE)
