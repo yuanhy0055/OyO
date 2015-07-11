@@ -47,7 +47,7 @@ else
    #rm -rf ${YYOUT} && mkdir ${YYOUT}
    [ -L ./out ] || ln -sf ${YYOUT} ./out
    echo -ne "Start: `date +%H%M%S`\n" >> ${TIM_FIL}
-   OUT_DIR=${YYOUT} make -j24 ${HIDEB}
+   OUT_DIR=${YYOUT} make -j4 ${HIDEB}
    echo -ne "End:   `date +%H%M%S`\n" >> ${TIM_FIL}
    jjsu >> ${TIM_FIL}
 fi
