@@ -29,7 +29,7 @@ PRODUCT_PACKAGES := \
     Browser \
     CarHomeLauncher \
     Contacts \
-    Home \
+    sya \
     HTMLViewer \
     Phone \
     ApplicationsProvider \
